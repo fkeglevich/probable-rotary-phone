@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+            <table>
+                <tr>
+                    <td>Nome:</td>
+                    <td><input type="text" th:field="*{nome}" /></td>
+                    <td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">Nome inválido</td>
+                </tr>
+				<tr>
+                    <td>Cidade:</td>
+                    <td><input type="text" th:field="*{cidade}" /></td>
+                    <td th:if="${#fields.hasErrors('cidade')}" th:errors="*{cidade}">Cidade inválida</td>
+                </tr>
+				<tr>
+                    <td>Mensagem:</td>
+                    <td><input type="textarea"  rows="4" cols="50" th:field="*{mensagem}" /></td>
+                    <td th:if="${#fields.hasErrors('mensagem')}" th:errors="*{mensagem}">Mensagem inválida</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Enviar</button></td>
+					<td><button type="reset">Cancelar</button></td>
+                </tr>
+				
+				<textarea name="comment" form="usrform">Enter text here...</textarea>
+            </table>
+        </form>
+    </body>
+</html>
